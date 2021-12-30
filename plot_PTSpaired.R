@@ -2,8 +2,8 @@ library(tidyverse)
 library(cowplot)
 library(patchwork)
 
-paired_data <- read.csv("data/processed/PTSage_paired_sourcedata.csv")
-
+# paired_data <- read.csv("data/processed/PTSage_paired_sourcedata.csv")
+paired_data <- readRDS("data/processed/PTSage_paired_sourcedata.rds")
 
 paired_data <- paired_data %>% mutate(AgeSimple1 = factor(AgeSimple1, 
                                                           levels = c("Children (1-10 years)", 

@@ -2,7 +2,8 @@ library(tidyverse)
 library(ggpubr)
 library(cowplot)
 
-repsize_data <- read.csv("data/processed/repertoire_size_sourcedata.csv")
+# repsize_data <- read.csv("data/processed/repertoire_size_sourcedata.csv")
+repsize_data <- readRDS("data/processed/repertoire_size_sourcedata.rds")
 
 y_title <- expression(paste0("MOI"[italic("var")]))
 

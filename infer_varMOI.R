@@ -34,3 +34,4 @@ repertoire_size <- repertoire_size %>% left_join(original_epi %>% select(SampleI
 repertoire_size <- repertoire_size %>% select(Season, AgeGroup, repertoire_size, var_MOI)
 
 write.csv(repertoire_size, here::here("data/processed", "repertoire_size_sourcedata.csv"), row.names = F)
+saveRDS(repertoire_size, here::here("data/processed", "repertoire_size_sourcedata.rds"))

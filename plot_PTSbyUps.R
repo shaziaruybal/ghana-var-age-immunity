@@ -3,16 +3,27 @@
 ##########################
 ##Get data
 ##########################
-EWS_ups_all <- read.csv("data/processed/PTSall_ups_EWS_sourcedata.csv")
-EWS_ups_age <- read.csv("data/processed/PTSage_ups_EWS_sourcedata.csv")
-  
-EDS_ups_all <- read.csv("data/processed/PTSall_ups_EDS_sourcedata.csv")
-EDS_ups_age <- read.csv("data/processed/PTSage_ups_EDS_sourcedata.csv")
-  
-Temporal_ups_all <- read.csv("data/processed/PTSall_ups_Temporal_sourcedata.csv")
-Temporal_ups_age <- read.csv("data/processed/PTSage_ups_Temporal_sourcedata.csv")
+# EWS_ups_all <- read.csv("data/processed/PTSall_ups_EWS_sourcedata.csv")
+# EWS_ups_age <- read.csv("data/processed/PTSage_ups_EWS_sourcedata.csv")
+#   
+# EDS_ups_all <- read.csv("data/processed/PTSall_ups_EDS_sourcedata.csv")
+# EDS_ups_age <- read.csv("data/processed/PTSage_ups_EDS_sourcedata.csv")
+#   
+# Temporal_ups_all <- read.csv("data/processed/PTSall_ups_Temporal_sourcedata.csv")
+# Temporal_ups_age <- read.csv("data/processed/PTSage_ups_Temporal_sourcedata.csv")
+# 
+# paired_ups_data <- read.csv("data/processed/PTSage_ups_paired_sourcedata.csv")
 
-paired_ups_data <- read.csv("data/processed/PTSage_ups_paired_sourcedata.csv")
+EWS_ups_all <- readRDS("data/processed/PTSall_ups_EWS_sourcedata.rds")
+EWS_ups_age <- readRDS("data/processed/PTSage_ups_EWS_sourcedata.rds")
+
+EDS_ups_all <- readRDS("data/processed/PTSall_ups_EDS_sourcedata.rds")
+EDS_ups_age <- readRDS("data/processed/PTSage_ups_EDS_sourcedata.rds")
+
+Temporal_ups_all <- readRDS("data/processed/PTSall_ups_Temporal_sourcedata.rds")
+Temporal_ups_age <- readRDS("data/processed/PTSage_ups_Temporal_sourcedata.rds")
+
+paired_ups_data <- readRDS("data/processed/PTSage_ups_paired_sourcedata.rds")
 
 ##########################
 ## Curation

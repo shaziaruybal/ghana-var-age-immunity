@@ -3,34 +3,38 @@ library(data.table)
 library(tidyverse)
 library(cowplot)
 
-getRuns <- function(Ups, iterations){
-  lower_curve <- upper_curve <- c()
-  for (i in 1:iterations){
-    print(i)
-    lower_curve <- rbind(lower_curve, fread(paste(results.folder, 'curveData_',Ups,'_0.95_subsampleT_96_run_',i,'.csv',sep=''), he=T))
-    upper_curve <- rbind(upper_curve, fread(paste(results.folder, 'curveData_',Ups,'_0.95_subsampleF_96_run_',i,'.csv',sep=''), he=T))
-  }
-  lower_curve$bound <- 'L'
-  upper_curve$bound <- 'U'
-  curveData <- rbind(lower_curve,upper_curve)
-  return(curveData)
-}
-
+# getRuns <- function(Ups, iterations){
+#   lower_curve <- upper_curve <- c()
+#   for (i in 1:iterations){
+#     print(i)
+#     lower_curve <- rbind(lower_curve, fread(paste(results.folder, 'curveData_',Ups,'_0.95_subsampleT_96_run_',i,'.csv',sep=''), he=T))
+#     upper_curve <- rbind(upper_curve, fread(paste(results.folder, 'curveData_',Ups,'_0.95_subsampleF_96_run_',i,'.csv',sep=''), he=T))
+#   }
+#   lower_curve$bound <- 'L'
+#   upper_curve$bound <- 'U'
+#   curveData <- rbind(lower_curve,upper_curve)
+#   return(curveData)
+# }
+# 
+# 
+# #################
+# ##Get data
+# #################
+# results.folder <- "./data/results_100iterations/"
+# 
+# Ups <- c('A','BC','ABC')
+# iterations <- 100
+# 
+# d <- NULL
+# for (u in (Ups)){
+#     x <- getRuns(u, iterations)
+#     d <- rbind(d, x)
+#   }
 
 #################
-##Get data
+## Get data
 #################
-results.folder <- "./data/results_100iterations/"
-
-Ups <- c('A','BC','ABC')
-iterations <- 100
-
-d <- NULL
-for (u in (Ups)){
-    x <- getRuns(u, iterations)
-    d <- rbind(d, x)
-  }
-
+d <- readRDS(here::here("data", "results_100iterations.rds"))
 
 #################
 ##Plot curves

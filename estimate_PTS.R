@@ -59,5 +59,8 @@ PTSEpi_upsBCtypes <- PTSEpi_upsBCtypes %>% inner_join(select(epi_formerge, ends_
 ##################
 
 write.csv(PTSEpi_alltypes, here::here("data/processed", "PTSEpi_AllTypes_FINAL.csv"), row.names = F)
+saveRDS(PTSEpi_alltypes, here::here("data/processed", "PTSEpi_AllTypes_FINAL.rds"))
 write.csv(PTSEpi_upsAtypes, here::here("data/processed", "PTSEpi_upsATypes_FINAL.csv"), row.names = F)
+saveRDS(PTSEpi_upsAtypes, here::here("data/processed", "PTSEpi_upsATypes_FINAL.rds"))
 write.csv(PTSEpi_upsBCtypes, here::here("data/processed", "PTSEpi_upsBCTypes_FINAL.csv"), row.names = F)
+saveRDS(PTSEpi_upsBCtypes, here::here("data/processed", "PTSEpi_upsBCTypes_FINAL.rds"))

@@ -1,7 +1,7 @@
 # PREVALENCE
 
-prev_data <- read.csv("data/infection_prevalence_sourcedata.csv")
-
+# prev_data <- read.csv("data/infection_prevalence_sourcedata.csv")
+prev_data <- readRDS("data/infection_prevalence_sourcedata.rds")
 
 prev_title <- expression(paste(italic("P. falciparum"), " prevalence"))
 

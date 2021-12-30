@@ -2,8 +2,11 @@ library(tidyverse)
 library(cowplot)
 library(patchwork)
 
-type_prev_season <- read.csv("data/type_prevalence_season_sourcedata.csv")
-type_prev_age <- read.csv("data/type_prevalence_age_sourcedata.csv")
+# type_prev_season <- read.csv("data/type_prevalence_season_sourcedata.csv")
+# type_prev_age <- read.csv("data/type_prevalence_age_sourcedata.csv")
+
+type_prev_season <- readRDS("data/type_prevalence_season_sourcedata.rds")
+type_prev_age <- readRDS("data/type_prevalence_age_sourcedata.rds")
 
 (type_prev_season %>% 
   mutate(Season = factor(Season, levels = c("End of dry season", "Found in both seasons", "End of wet season"))) %>% 

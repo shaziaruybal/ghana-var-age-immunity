@@ -5,14 +5,21 @@ library(patchwork)
 ##########################
 ##Get data
 ##########################
-EWS_all <- read.csv("data/processed/PTSall_EWS_sourcedata.csv")
-EDS_all <- read.csv("data/processed/PTSall_EDS_sourcedata.csv")
-temporal_all <- read.csv("data/processed/PTSall_Temporal_sourcedata.csv")
+# EWS_all <- read.csv("data/processed/PTSall_EWS_sourcedata.csv")
+# EDS_all <- read.csv("data/processed/PTSall_EDS_sourcedata.csv")
+# temporal_all <- read.csv("data/processed/PTSall_Temporal_sourcedata.csv")
+# 
+# EWS_age <- read.csv("data/processed/PTSage_EWS_sourcedata.csv")
+# EDS_age <- read.csv("data/processed/PTSage_EDS_sourcedata.csv")
+# temporal_age <- read.csv("data/processed/PTSage_Temporal_sourcedata.csv")
 
-EWS_age <- read.csv("data/processed/PTSage_EWS_sourcedata.csv")
-EDS_age <- read.csv("data/processed/PTSage_EDS_sourcedata.csv")
-temporal_age <- read.csv("data/processed/PTSage_Temporal_sourcedata.csv")
+EWS_all <- readRDS("data/processed/PTSall_EWS_sourcedata.rds")
+EDS_all <- readRDS("data/processed/PTSall_EDS_sourcedata.rds")
+temporal_all <- readRDS("data/processed/PTSall_Temporal_sourcedata.rds")
 
+EWS_age <- readRDS("data/processed/PTSage_EWS_sourcedata.rds")
+EDS_age <- readRDS("data/processed/PTSage_EDS_sourcedata.rds")
+temporal_age <- readRDS("data/processed/PTSage_Temporal_sourcedata.rds")
 
 ##########################
 ##Curation
@@ -192,7 +199,7 @@ p_PTSwet + p_PTSdry + p_PTStemporal + p_PTSwet_zoom + p_PTSdry_zoom + p_PTStempo
 ##Save plot 
 #################
 theme_set(theme_cowplot(font_size = 10))
-ggsave("viz/PTS_season_age.png", width = 16, height = 8)
+ggsave("viz/PTS_season_age_v2.png", width = 16, height = 8)
 
 #################
 ##Stats
