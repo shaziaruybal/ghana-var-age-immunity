@@ -14,7 +14,9 @@ type_prev_age <- readRDS("data/type_prevalence_age_sourcedata.rds")
   ggplot(aes(x = Ups, y = n, fill = Season)) + 
   geom_bar(stat = "identity", position = "fill") + 
   scale_fill_manual(values = c("#d8b365", "#636363", "#5ab4ac")) +
-  scale_x_discrete(labels = c("non-upsA DBLα types \n(N=40,016)", "upsA DBLα types \n(N=2,383)", "All DBLα types \n(N=42,399)")) +
+  scale_x_discrete(labels = expression(paste("non-upsA DBLα types (", italic(n), "=40,016)"), 
+                            paste("upsA DBLα types (", italic(n), "=2,383)"), 
+                            paste("All DBLα types (", italic(n), "=42,399)"))) +
   labs(
     x = "",
     y = "Proportion",
@@ -41,7 +43,8 @@ type_prev_age <- readRDS("data/type_prevalence_age_sourcedata.rds")
   theme(legend.position = "none") +
   background_grid(major = "xy", minor = "none")) +
   
-  plot_annotation(tag_levels = "a") + plot_layout(heights = c(1, 1.5)) 
+  plot_annotation(tag_levels = "A") + plot_layout(heights = c(1, 1.5)) 
 
 theme_set(theme_cowplot(font_size = 12))
-ggsave("viz/type_prevalence.png", width = 10, height = 8)
+# ggsave("viz/type_prevalence.png", width = 10, height = 8)
+ggsave("viz_final/IJPara21_MM04_R1_figure1.tiff", width = 10, height = 8)

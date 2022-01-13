@@ -86,12 +86,11 @@ p_PTSwet <- EWS_data %>%
     labs(
       x = "", 
       y = title) +
+    theme_cowplot() +
     theme(
       text = element_text(size = 12, family = "sans"),
-      axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1),
       legend.position = "none") +
     geom_boxplot(width = 0.15, fill = "white") +
-    theme_cowplot() +
     background_grid(major = "xy", minor = "none")
 
 p_PTSdry <- EDS_data %>% 
@@ -107,11 +106,11 @@ p_PTSdry <- EDS_data %>%
                                "Adolescents \n(11-20 years)", 
                                "Adults \n(>20 years)")) +
    scale_y_continuous(limits = c(0, 1), breaks = scales::pretty_breaks(n = 5)) + 
-   theme(
+  theme_cowplot() +
+  theme(
      text = element_text(size = 12, family = "sans"),
      legend.position = "none") +
    geom_boxplot(width = 0.15, fill = "white") + 
-   theme_cowplot() +
    background_grid(major = "xy", minor = "none")
 
 p_PTStemporal <- temporal_data %>% 
@@ -127,11 +126,11 @@ p_PTStemporal <- temporal_data %>%
                                "Adolescents \n(11-20 years)", 
                                "Adults \n(>20 years)")) +
    scale_y_continuous(limits = c(0, 1), breaks = scales::pretty_breaks(n = 5)) + 
-   theme(
+  theme_cowplot() +
+  theme(
      text = element_text(size = 12, family = "sans"),
      legend.position = "none") +
    geom_boxplot(width = 0.15, fill = "white") + 
-   theme_cowplot() + 
    background_grid(major = "xy", minor = "none") 
   
 ##########################
@@ -193,13 +192,14 @@ p_PTStemporal_zoom <- temporal_data %>%
     legend.justification = c("right", "top")) +
   background_grid(major = "xy", minor = "none")
 
-p_PTSwet + p_PTSdry + p_PTStemporal + p_PTSwet_zoom + p_PTSdry_zoom + p_PTStemporal_zoom + plot_annotation(tag_levels = "a") 
+p_PTSwet + p_PTSdry + p_PTStemporal + p_PTSwet_zoom + p_PTSdry_zoom + p_PTStemporal_zoom + plot_annotation(tag_levels = "A") 
 
 #################
 ##Save plot 
 #################
 theme_set(theme_cowplot(font_size = 10))
-ggsave("viz/PTS_season_age_v2.png", width = 16, height = 8)
+# ggsave("viz/PTS_season_age_v2.png", width = 16, height = 8)
+ggsave("viz_final/IJPara21_MM04_R1_figure2.tiff", width = 16, height = 8)
 
 #################
 ##Stats

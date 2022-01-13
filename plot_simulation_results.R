@@ -52,13 +52,13 @@ plot_immunitycurves <- d %>%
                        name = "Co-transmission", 
                        breaks = c("FALSE", "TRUE"), 
                        labels = c("Yes", "No")) +
-    labs(x = 'Age (years)', 
+    labs(x = 'Age (years)',
          y = '% immunity to DBLα types') +
     scale_x_continuous(limits = c(0,100), breaks = seq(0,100, by = 25)) +
     scale_y_continuous(limits = c(0,0.95), breaks = scales::pretty_breaks(n = 10), labels = scales::percent_format(1)) +
+    theme_bw() +
     theme(legend.position = "bottom", legend.justification = "center") +
-    facet_grid(~Ups) +
-    theme_bw() 
+    facet_grid(~Ups) 
 
 #################
 ##Save curves plot 
@@ -125,9 +125,10 @@ ggsave("viz/simulations_bites.png", width = 16)
 #################
 ##Save all panels
 #################
-(plot_bites_half + plot_bites_all) / plot_immunitycurves + plot_annotation(tag_levels = "a") + plot_layout(guides = "collect")
+(plot_bites_half + plot_bites_all) / plot_immunitycurves + plot_annotation(tag_levels = "A") +  plot_layout(guides = "collect")
 theme_set(theme_cowplot(font_size = 10))
-ggsave("viz/results_simulations.png", width = 16, height = 10)
+# ggsave("viz_final/results_simulations.png", width = 16, height = 10)
+ggsave("viz_final/IJPARA21_MM04_R1_figure4.tiff", width = 16, height = 10)
 
 ####################
 ##Graphical abstract

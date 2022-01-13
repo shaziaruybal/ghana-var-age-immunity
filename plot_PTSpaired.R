@@ -29,12 +29,11 @@ p_PTSpaired <- paired_data %>%
     labs(
       x = "", 
       y = title) +
+    theme_cowplot() +
     theme(
       text = element_text(size = 12, family = "sans"),
-      axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1),
       legend.position = "none") +
     geom_boxplot(width = 0.15, fill = "white") +
-    theme_cowplot() +
     background_grid(major = "xy", minor = "none")
 
 p_PTSpaired_zoom <- paired_data %>% 
@@ -55,9 +54,10 @@ ggplot(aes(x = PTS_score, fill = AgeSimple1)) +
     legend.justification = c("right", "top")) +
   background_grid(major = "xy", minor = "none")
 
-p_PTSpaired + p_PTSpaired_zoom + plot_annotation(tag_levels = "a")
+p_PTSpaired + p_PTSpaired_zoom + plot_annotation(tag_levels = "A")
 #################
 ##Save plot 
 #################
 theme_set(theme_cowplot(font_size = 10))
-ggsave("viz/PTS_paired_samples_revision.png", width = 10, height = 5)
+# ggsave("viz/PTS_paired_samples_revision.png", width = 10, height = 5)
+ggsave("viz_final/IJPara21_MM04_R1_figure4.tiff", width = 10, height = 5)
